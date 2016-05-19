@@ -1,0 +1,14 @@
+#!/bin/bash
+n=1
+while (($n <= 10))
+do
+    echo "Starting the Database"
+    mysql-ctl start
+    echo "Starting the Rails Server"
+    timeout 2h rails server -p $PORT -b $IP
+    echo "Stopping the Database"
+    mysql-ctl stop
+    n=$(( n+1 ))
+done
+
+

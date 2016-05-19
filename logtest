@@ -1,0 +1,6 @@
+#!/bin/bash
+while :
+do
+	./StartEverything
+	sleep 2h
+done

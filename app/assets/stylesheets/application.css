@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* CSS Document */
+
+.buttonW{
+width: 187px;	
+}
+.lineFormat{
+	float:left;
+ font-size:14pt;
+ height: 30px;
+  padding-bottom: 1em;
+	
+}
+.hidden{
+display:none;	
+}
+
+#rightContent {
+    border-left: thick double #EEEEEE;
+    padding-left:10px;
+    height:auto;
+    }
+
+
+	#showBackground{
+	background-image: url("background-pattern.jpg");
+	}
+	#cartIcon {
+	background-image: url("../cart.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 60px;
+	width: 60px;
+	/*margin-left:100px !important;*/
+	position: static;
+}
+	#cartIcon2 {
+	background-image: url("../cart.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 65px;
+	width: 65px;
+	margin-left:32px;
+}
+	.buttonImage {
+	background-image: image-url('cart_button.png');
+	background-repeat: no-repeat;
+	height: 100px;
+}
+
+.itemBackground {
+	font-size:15pt;
+	color:black;
+	width: 30px;
+	height:30px;
+	margin-top:-5px !important;
+	margin-left: 15px !important;
+	border-radius: 20px;
+}
+
+.link-to {
+	text-decoration:none !important;
+	}
+
+
+.navLinks {
+	font-size:20px;
+	color:#FFFFFF !important;
+	font-family:Arial, Helvetica, sans-serif;
+	padding-left:45px;
+	padding-right:45px;
+	text-decoration:none;	
+	list-style-type: none;
+	display:inline-block;
+}
+.navbar {
+	position:relative;
+	margin-left: -10px;
+	margin-right: -10px;
+	background-color:#17130F;
+	text-align:center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	white-space:nowrap;
+	margin-bottom: 25px;
+
+}
+

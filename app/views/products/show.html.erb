@@ -1,0 +1,60 @@
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Passion+One:400,700' rel='stylesheet' type='text/css'>
+</head>
+<style>
+    h1, h2{
+        font-family: 'Passion One';
+    }
+</style>
+
+<!-- Kim: section added 2/26/2016) -->
+<!--Breadcrumbs -->
+<% @products.each do |product| %>
+    <% @products.each do |product| %>
+        <% if product.productCode == params[:id] %>
+            <% @productLine = product.productLine  %>
+    <% end %><% end %>
+<% end %>
+<%= link_to 'Products', products_path %>  / 
+<% @ProductLineName = @productLine %>
+    <% case @productLine %>
+    	<% when "Batteries"                         then  @productLine = "1"  %>
+    	<% when "Collision - Body Parts - Hardware" then  @productLine = "2"  %>
+    	<% when "Brakes"                            then  @productLine = "3"  %>
+    	<% when "Heating & Cooling"                 then  @productLine = "4"  %>
+    	<% when "Electrical - Lighting"             then  @productLine = "5"  %>
+    	<% when "Accessories"                       then  @productLine = "6"  %>
+    <% end %>
+<%= link_to @ProductLineName, :action => "index", :controller => 'productlines', :id => @productLine %>
+ / 
+<% @products.each do |product| %>
+    <% if product.productCode == params[:id] %>
+        <%= product.productName  %>
+    <% end %>
+<% end %>
+<!--End of Breadcrumbs -->
+
+<!-- Description of Product -->
+<!-- Kim: modified code to add button and format into 960 grid 3/2/2016 -->
+<!-- Kim: added Add To Cart icon/button (DISABLED until functional) 3/2/2016 -->
+<div class="grid_12">
+    <% @products.each do |product| %>
+    <% if product.productCode == params[:id] %>
+    </div>
+<div class="grid_5">
+    <img src="<%= product.productImage %>" style="max-width:100%" align="left">
+</div>
+
+<div class="grid_5" style=" padding-top:25px; float:right;margin-right:10%">
+    <h1><strong><%= product.productName  %></strong></h1><br />
+        <%= button_to 'Add to Cart', line_items_path(product_id: product) %><br>
+        <p>Price: $ <%= product.buyPrice %></p>
+        <p>Item Code:        <%= product.productCode  %></p>
+        <%= product.productDescription %><br /><br />
+<% end %>
+<% end %>
+         
+</div>
+<div class="clear"></div>
+    
+</div>
